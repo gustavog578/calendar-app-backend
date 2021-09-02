@@ -12,22 +12,19 @@ dbConnection();
 
 app.use( cors() );
 
-//Directorio public
+//public directory
 app.use( express.static('public') );
 
 // Body Parser
 app.use( express.json() );
 
 
-//rutas
+//routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/events', require('./routes/events'));
 
 
-
-//TODO: CRUD Eventos
-
-//escuchar peticiones
+//listen
 app.listen( process.env.PORT, () => {
     console.log(`Server on port ${ process.env.PORT }`)
 })
